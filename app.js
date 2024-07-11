@@ -8,6 +8,7 @@ const productRoutes = require("./api/routes/product");
 const orderRoutes = require("./api/routes/orders");
 const userRoutes = require("./api/routes/user");
 const authRoutes = require("./api/routes/auth");
+const cartRoutes = require("./api/routes/carts");
 
 mongoose.connect(
   "mongodb+srv://devuser:nodeshop@node-shop.ivgtopa.mongodb.net/?retryWrites=true&w=majority&appName=node-shop"
@@ -35,6 +36,7 @@ app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
+app.use("/cart",cartRoutes);
 
 //handle errors
 app.use((req, res, next) => {
